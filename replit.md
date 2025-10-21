@@ -1,8 +1,8 @@
-# Developer Tooling Template
+# Developer Tooling App
 
 ## Overview
 
-This is a JavaScript/TypeScript starter template configured with modern development tooling for code quality, formatting, and git workflow automation. The repository provides a foundation for building web applications with automated linting, formatting, and commit message validation. Currently includes a simple Node.js HTTP server as a demonstration.
+This is a Node.js web server application configured with comprehensive developer tooling for code quality, formatting, and git workflow automation. The application runs a simple HTTP server on port 5000 and demonstrates best practices for modern JavaScript development with automated linting, formatting, and conventional commit enforcement.
 
 ## User Preferences
 
@@ -10,78 +10,89 @@ Preferred communication style: Simple, everyday language.
 
 ## System Architecture
 
-### Core Technology Stack
+### Runtime Environment
+- **Platform**: Node.js (CommonJS modules)
+- **Server**: Native Node.js HTTP server
+- **Hot Reload**: Nodemon for automatic server restarts during development
+- **Port**: 5000 (bound to 0.0.0.0 for network accessibility)
 
-**Runtime Environment**: Node.js (CommonJS modules)
-- **Rationale**: Standard Node.js environment provides compatibility and straightforward execution
-- **Entry Point**: `src/index.js` - Simple HTTP server listening on port 5000
+**Rationale**: Uses Node.js native HTTP module for minimal dependencies and maximum simplicity. Nodemon provides developer experience improvements without affecting production deployment.
 
-### Code Quality and Formatting
+### Code Quality & Formatting
 
-**Linting Strategy**: ESLint v9 with flat config
-- **Configuration**: `eslint.config.mjs` using modern flat config format
-- **Plugins**: React-specific linting (react-hooks, react-refresh) pre-configured for React projects
-- **Rationale**: ESLint v9 flat config provides simpler, more intuitive configuration compared to legacy .eslintrc
-- **Trade-offs**: Requires ESLint 9.0.0+ as peer dependency; older plugins may need updates
+**ESLint v9 (Flat Config)**
+- Uses modern flat configuration format (eslint.config.mjs)
+- Configured plugins: React Hooks and React Refresh (for future React integration)
+- **Rationale**: ESLint v9's flat config provides better performance and simpler configuration management. React plugins are pre-configured for potential frontend expansion.
 
-**Code Formatting**: Prettier
-- **Approach**: Opinionated, zero-configuration formatting
-- **Integration**: Works alongside ESLint via lint-staged
-- **Rationale**: Eliminates style debates and ensures consistency across contributors
+**Prettier**
+- Opinionated code formatter for consistent style across all file types
+- Configured for: JavaScript, TypeScript, JSON, CSS, Markdown
+- **Rationale**: Eliminates style debates and ensures consistent formatting across the team.
+
+**Lint-staged**
+- Runs linters only on staged Git files
+- **Rationale**: Performance optimization - only checks files that are being committed rather than the entire codebase.
 
 ### Git Workflow Automation
 
-**Commit Message Enforcement**: Commitlint with Conventional Commits
-- **Configuration**: `commitlint.config.ts` enforcing lowercase subjects
-- **Standard**: Follows conventional commits spec (feat:, fix:, chore:, etc.)
-- **Rationale**: Enables automated changelog generation and semantic versioning
-- **Interactive Mode**: Commitizen (cz-conventional-changelog) available for guided commit creation
+**Husky Git Hooks**
+- Pre-commit hook: Triggers lint-staged to validate code before commits
+- Commit-msg hook: Validates commit message format via commitlint
+- **Rationale**: Enforces quality gates before code enters version control, preventing bad code and poorly formatted commits from being shared.
 
-**Git Hooks**: Husky v9
-- **Pre-commit Hook**: Triggers lint-staged to validate code before commits
-- **Commit-msg Hook**: Validates commit message format via commitlint
-- **Rationale**: Catches issues early in development workflow, preventing problematic commits
+**Commitlint**
+- Enforces Conventional Commits specification
+- Custom rule: Subject must be lowercase
+- Format: `type(scope): description` (e.g., `feat: add new feature`, `fix: resolve bug`)
+- **Rationale**: Standardized commit messages enable automated changelog generation, semantic versioning, and better project history readability.
 
-**Staged File Processing**: Lint-staged
-- **Scope**: Runs ESLint and Prettier only on staged files (*.js, *.jsx, *.ts, *.tsx, *.json, *.css, *.md)
-- **Performance**: Avoids checking entire codebase on every commit
-- **Trade-offs**: Only validates staged changes; full codebase linting requires manual `npm run lint`
+**Commitizen**
+- Interactive commit message builder
+- Path: cz-conventional-changelog
+- **Rationale**: Provides guided prompts for creating conventional commits, reducing errors and improving developer experience.
 
-### Project Structure Philosophy
+### Development Workflow
 
-**Minimal Baseline Approach**:
-- Single source directory (`src/`) for application code
-- Configuration files at root for tool discoverability
-- No framework lock-in; template supports both vanilla JS and React projects
-- **Rationale**: Maximum flexibility for different project types while maintaining consistent tooling
+1. Developer makes code changes
+2. On `git add`, files are staged
+3. On `git commit`:
+   - Pre-commit hook runs lint-staged (ESLint + Prettier on staged files)
+   - Developer writes commit message
+   - Commit-msg hook validates message format via commitlint
+4. If all checks pass, commit is created
+
+**Available Commands**:
+- `npm start` - Launch development server with auto-reload
+- `npm run lint` - Run ESLint across entire codebase
+- `npm run format` - Format all files with Prettier
 
 ## External Dependencies
 
-### Development Tooling
+### Development Tools
 
-**Core Linting and Formatting**:
-- `eslint` (^9.30.1) - JavaScript/TypeScript linting engine
-- `@eslint/js` (^9.30.1) - ESLint recommended configurations
+**Linting & Formatting**:
+- `eslint` (^9.30.1) - JavaScript/TypeScript linter
+- `@eslint/js` (^9.30.1) - ESLint JavaScript configurations
+- `eslint-plugin-react-hooks` (^5.2.0) - React Hooks rules
+- `eslint-plugin-react-refresh` (^0.4.20) - React Fast Refresh rules
 - `prettier` (^3.6.2) - Code formatter
 
-**React-Specific Plugins**:
-- `eslint-plugin-react-hooks` (^5.2.0) - Enforces React Hooks rules
-- `eslint-plugin-react-refresh` (^0.4.20) - Validates Fast Refresh compatibility
-
-**Commit Workflow**:
+**Commit Management**:
 - `@commitlint/cli` (^19.8.1) - Commit message linter
 - `@commitlint/config-conventional` (^19.8.1) - Conventional commits preset
-- `@commitlint/types` (^20.0.0) - TypeScript type definitions for commitlint
-- `commitizen` (^4.3.1) - Interactive commit message CLI
-- `cz-conventional-changelog` (^3.3.0) - Commitizen adapter for conventional commits
+- `commitizen` (^4.3.1) - Interactive commit tool
+- `cz-conventional-changelog` (^3.0.1) - Conventional commits adapter
 
-**Git Hooks and Automation**:
+**Git Automation**:
 - `husky` (^9.1.7) - Git hooks manager
-- `lint-staged` (^16.1.2) - Pre-commit file processor
+- `lint-staged` (^16.1.2) - Staged files linter runner
 
-### Runtime Dependencies
+**Development Server**:
+- `nodemon` (^3.1.10) - Auto-restart development server
 
-**Node.js Built-in Modules**:
-- `http` - Web server (no external dependencies required for demo)
+### Runtime Requirements
 
-**Note**: This template has minimal runtime dependencies by design. Projects built on this template will add their own framework dependencies (React, Express, etc.) as needed.
+**Node.js Version**: ^18.18.0 || ^20.9.0 || >=21.1.0
+
+**Note**: All dependencies are development dependencies. The application itself has zero runtime dependencies, using only Node.js native modules.

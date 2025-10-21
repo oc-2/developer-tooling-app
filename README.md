@@ -1,12 +1,10 @@
-# Developer Tooling Template
+# Developer Tooling App
 
 ## Overview
 
-This is a blank starter repository configured with modern JavaScript development tools. It was imported from GitHub (codespaces-blank) and set up to run in the Replit environment.
+This is a Node.js application configured with modern development tooling for code quality, formatting, and git workflow automation. It includes automated linting, formatting, and commit message validation using industry-standard tools.
 
-**Purpose**: Provide a foundation for JavaScript/TypeScript projects with automated code quality checks and best practices.
-
-**Current State**: Fully configured and running with a simple demo web server on port 5000.
+**Current State**: Running a Node.js web server on port 5000 with hot-reload enabled via nodemon.
 
 ## Project Architecture
 
@@ -18,7 +16,7 @@ This is a blank starter repository configured with modern JavaScript development
 │   ├── commit-msg       # Runs commitlint on commit messages
 │   └── pre-commit       # Runs lint-staged before commits
 ├── src/
-│   └── index.js         # Simple Node.js web server (example)
+│   └── index.js         # Node.js web server
 ├── commitlint.config.ts # Conventional commits configuration
 ├── eslint.config.mjs    # ESLint v9 flat config
 ├── package.json         # Project metadata and dependencies
@@ -45,7 +43,7 @@ This is a blank starter repository configured with modern JavaScript development
 
 ### Available Commands
 
-- `npm start` - Start the example web server
+- `npm start` - Start the web server with nodemon (auto-reload on file changes)
 - `npm run lint` - Run ESLint on all files
 - `npm run format` - Format all files with Prettier
 
@@ -82,17 +80,3 @@ When you commit, Husky automatically:
 3. Validates commit message format
 
 If any check fails, the commit is blocked until issues are fixed.
-
-## Next Steps
-
-This template is ready for building your application! Consider:
-
-1. Replace the example server in `src/index.js` with your actual application code
-2. Add additional dependencies as needed
-3. Configure ESLint rules in `eslint.config.mjs` to match your preferences
-4. Add Prettier configuration (.prettierrc) for custom formatting rules
-5. Create additional git hooks in `.husky/` if needed
-
-## User Preferences
-
-_No specific preferences recorded yet_
