@@ -33,5 +33,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
   }
 }
