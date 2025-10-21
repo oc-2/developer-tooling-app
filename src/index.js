@@ -70,8 +70,6 @@ const server = http.createServer((req, res) => {
             <strong>✓ Lint-staged</strong> - Run linters on staged files
         </div>
         
-        <h2>Getting Started</h2>
-        <p>You can now start building your application! This template provides a solid foundation for JavaScript/TypeScript projects with automated code quality checks.</p>
     </div>
 </body>
 </html>`);
