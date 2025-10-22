@@ -45,29 +45,6 @@ This is a repo configured with commit message enhancers.
 - `npm run lint` - Run ESLint on all files
 - `npm run format` - Format all files with Prettier
 
-## Development Workflow
-
-### Making Commits
-
-The repository enforces conventional commits. Use this format:
-
-```
-<type>: <description>
-
-[optional body]
-
-[optional footer]
-```
-
-**Types**: feat, fix, docs, style, refactor, test, chore
-
-**Example**:
-
-```
-feat: add user authentication
-fix: resolve login redirect bug
-docs: update readme with setup instructions
-```
 
 ### Pre-commit Checks
 
