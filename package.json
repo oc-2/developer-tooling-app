@@ -43,12 +43,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oc-2/codespaces-blank.git"
+    "url": "git+https://github.com/oc-2/developer-tooling-app.git"
   },
   "author": "oc-2",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/oc-2/codespaces-blank/issues"
+    "url": "https://github.com/oc-2/developer-tooling-app/issues"
   },
-  "homepage": "https://github.com/oc-2/codespaces-blank#readme"
+  "homepage": "https://github.com/oc-2/developer-tooling-app#readme",
+  "packageManager": "yarn@4.10.3"
 }
