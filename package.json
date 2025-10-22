@@ -40,5 +40,15 @@
   },
   "engines": {
     "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oc-2/codespaces-blank.git"
+  },
+  "author": "oc-2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oc-2/codespaces-blank/issues"
+  },
+  "homepage": "https://github.com/oc-2/codespaces-blank#readme"
 }

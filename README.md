@@ -2,9 +2,7 @@
 
 ## Overview
 
-This is a Node.js application configured with modern development tooling for code quality, formatting, and git workflow automation. It includes automated linting, formatting, and commit message validation using industry-standard tools.
-
-**Current State**: Running a Node.js web server on port 5000 with hot-reload enabled via nodemon.
+This is a repo configured with commit message enhancers.
 
 ## Project Architecture
 
