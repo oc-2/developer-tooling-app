@@ -45,7 +45,6 @@ This is a repo configured with commit message enhancers.
 - `npm run lint` - Run ESLint on all files
 - `npm run format` - Format all files with Prettier
 
-
 ### Pre-commit Checks
 
 When you commit, Husky automatically:

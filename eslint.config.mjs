@@ -1,10 +1,24 @@
+// eslint.config.js
 import js from "@eslint/js";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 
 export default [
-  js.configs.recommended,
   {
+    // This first element handles global ignores
+    ignores: [
+      "node_modules/**",
+      ".cache/**",
+      ".upm/**",
+      ".husky/**",
+      ".local/**",
+      ".replit/**",
+      "coverage/**",
+      "dist/**",
+      "build/**",
+      "*.log",
+    ],
+
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: "module",
@@ -18,6 +32,9 @@ export default [
       },
     },
   },
+
+  js.configs.recommended,
+
   {
     files: ["**/*.jsx", "**/*.tsx"],
     plugins: {
@@ -31,8 +48,5 @@ export default [
         { allowConstantExport: true },
       ],
     },
-  },
-  {
-    ignores: ["node_modules", "dist", "build", ".husky"],
   },
 ];
