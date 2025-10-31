@@ -4,6 +4,7 @@ expertMode = true
 
 [nix]
 channel = "stable-25_05"
+packages = ["unzip"]
 
 [workflows]
 runButton = "Project"
@@ -26,9 +27,9 @@ outputType = "webview"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm start"
+args = "yarn start"
 waitForPort = 5000
 
 [[ports]]
 localPort = 5000
-externalPort = 80
+externalPort = 5000

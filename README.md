@@ -10,15 +10,22 @@ This is a repo configured with commit message enhancers.
 
 ```
 .
-├── .husky/              # Git hooks
-│   ├── commit-msg       # Runs commitlint on commit messages
-│   └── pre-commit       # Runs lint-staged before commits
+├── .husky/              
+│   ├── commit-msg       
+│   └── pre-commit       
 ├── src/
-│   └── index.js         # Node.js web server
-├── commitlint.config.ts # Conventional commits configuration
-├── eslint.config.mjs    # ESLint v9 flat config
-├── package.json         # Project metadata and dependencies
-└── README.md            # This file
+│   ├── index.js         
+│   └── static/         
+│       ├── index.html    
+│       └── css/         
+│           ├── styles.css         
+│           ├── bootstrap.min.css    
+│           └── font-awesome/ 
+|               ├── font-awesome stuff
+├── commitlint.config.ts  
+├── eslint.config.mjs     
+├── package.json          
+└── README.md
 ```
 
 ### Configured Tools
@@ -39,11 +46,15 @@ This is a repo configured with commit message enhancers.
 
 5. **Lint-staged** - Runs linters only on staged files for performance
 
+6. **Jest** - Uses jest to test
+
 ### Available Commands
 
-- `npm start` - Start the web server with nodemon (auto-reload on file changes)
-- `npm run lint` - Run ESLint on all files
-- `npm run format` - Format all files with Prettier
+- `yarn start` - Start the web server with nodemon (auto-reload on file changes)
+- `yarn run lint` - Run ESLint on all files
+- `yarn run format` - Format all files with Prettier
+- `yarn run commit` - Runs commitizen
+- `yarn run test` - Uses jest to test
 
 ### Pre-commit Checks
 
