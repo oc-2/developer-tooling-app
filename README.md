@@ -1,4 +1,5 @@
 # Developer Tooling App
+[![codecov](https://codecov.io/gh/oc-2/developer-tooling-app/graph/badge.svg?token=U49PGrRnaY)](https://codecov.io/gh/oc-2/developer-tooling-app)
 
 ## Overview
 
@@ -20,11 +21,11 @@ This is a repo configured with commit message enhancers.
 │       └── css/         
 │           ├── styles.css         
 │           ├── bootstrap.min.css    
-│           └── font-awesome/ 
-|               ├── font-awesome stuff
+│           └── font-awesome/**
 ├── commitlint.config.ts  
 ├── eslint.config.mjs     
-├── package.json          
+├── package.json     
+├── package-lock.json
 └── README.md
 ```
 
@@ -50,11 +51,11 @@ This is a repo configured with commit message enhancers.
 
 ### Available Commands
 
-- `yarn start` - Start the web server with nodemon (auto-reload on file changes)
-- `yarn run lint` - Run ESLint on all files
-- `yarn run format` - Format all files with Prettier
-- `yarn run commit` - Runs commitizen
-- `yarn run test` - Uses jest to test
+- `npm start` - Start the web server with nodemon (auto-reload on file changes)
+- `npm run lint` - Run ESLint on all files
+- `npm run format` - Format all files with Prettier
+- `npm run commit` - Runs commitizen
+- `npm run test` - Uses jest to test
 
 ### Pre-commit Checks
 

@@ -9,7 +9,8 @@
     "start": "nodemon src/index.js",
     "format": "prettier --write .",
     "lint": "eslint \"**/*.{js,ts,jsx,tsx}\" --ignore-pattern \"node_modules/**\" --ignore-pattern \".cache/**\"",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
