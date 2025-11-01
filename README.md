@@ -17,6 +17,8 @@ This is a repo configured with commit message enhancers.
 │   └── pre-commit
 ├── src/
 │   ├── index.js
+|   └── tests/
+|       ├── cheerio.spec.js
 │   └── static/
 │       ├── index.html
 │       └── css/
