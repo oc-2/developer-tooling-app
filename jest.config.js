@@ -22,8 +22,13 @@ const config = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    "src/**/*.{js,ts}", // include all JS/TS in src
-    "!src/static/**", // but exclude static assets
+    "**/*.{js,ts}",
+    "!**/node_modules/**",
+    "!**/dist/**",
+    "!**/coverage/**",
+    "!src/static/**",
+    "!**/__tests__/**",
+    "!**/*.d.ts",
   ],
 
   // The directory where Jest should output its coverage files
@@ -35,10 +40,12 @@ const config = {
     "/dist/",
     "/coverage/",
     "/.config/",
+    "/.husky/",
     "/.cache/",
     "/.git/",
     "/.vscode/",
     "/.idea/",
+    "\\.d\\.ts$",
   ],
 
   // Indicates which provider should be used to instrument code for coverage
