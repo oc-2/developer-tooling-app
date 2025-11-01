@@ -1,4 +1,5 @@
 # Developer Tooling App
+
 [![codecov](https://codecov.io/gh/oc-2/developer-tooling-app/graph/badge.svg?token=U49PGrRnaY)](https://codecov.io/gh/oc-2/developer-tooling-app)
 
 ## Overview
@@ -11,20 +12,20 @@ This is a repo configured with commit message enhancers.
 
 ```
 .
-├── .husky/              
-│   ├── commit-msg       
-│   └── pre-commit       
+├── .husky/
+│   ├── commit-msg
+│   └── pre-commit
 ├── src/
-│   ├── index.js         
-│   └── static/         
-│       ├── index.html    
-│       └── css/         
-│           ├── styles.css         
-│           ├── bootstrap.min.css    
+│   ├── index.js
+│   └── static/
+│       ├── index.html
+│       └── css/
+│           ├── styles.css
+│           ├── bootstrap.min.css
 │           └── font-awesome/**
-├── commitlint.config.ts  
-├── eslint.config.mjs     
-├── package.json     
+├── commitlint.config.ts
+├── eslint.config.mjs
+├── package.json
 ├── package-lock.json
 └── README.md
 ```
