@@ -7,8 +7,9 @@
   "scripts": {
     "commit": "git-cz",
     "start": "nodemon src/index.js",
+    "dev:cheerio": "node src/tests/cheerio.spec.js",
     "format": "prettier --write .",
-    "lint": "eslint \"**/*.{js,ts,jsx,tsx}\" --ignore-pattern \"node_modules/**\" --ignore-pattern \".cache/**\"",
+    "lint": "eslint",
     "test": "jest",
     "test:coverage": "jest --coverage"
   },
@@ -29,7 +30,8 @@
     "prettier": "^3.6.2"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "cheerio": "^1.1.2",
+    "express": "^4.21.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,md}": [

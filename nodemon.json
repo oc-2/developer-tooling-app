@@ -1,11 +1,6 @@
 {
   "delay": 1000,
   "watch": ["src"],
-  "ext": "js,json,html",
-  "ignore": [
-    "node_modules",
-    "dist",
-    "src/static",
-    "src/static/css/**"
-  ]
+  "ext": "js,mjs,cjs,jsx,ts,tsx,json,html",
+  "ignore": ["node_modules", "dist", "src/static", "src/static/css/**"]
 }

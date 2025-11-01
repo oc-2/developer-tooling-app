@@ -4,7 +4,7 @@ expertMode = true
 
 [nix]
 channel = "stable-25_05"
-packages = ["p7zip"]
+packages = ["p7zip", "at", "wget"]
 
 [workflows]
 runButton = "Project"
@@ -29,6 +29,10 @@ outputType = "webview"
 task = "shell.exec"
 args = "npm start"
 waitForPort = 5000
+
+[[ports]]
+localPort = 3000
+externalPort = 80
 
 [[ports]]
 localPort = 5000

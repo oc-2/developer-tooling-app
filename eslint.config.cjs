@@ -21,7 +21,10 @@ module.exports = [
       "build/**",
       "*.log",
     ],
+  },
 
+  {
+    files: ["**/*.js"],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: "module",
@@ -36,7 +39,22 @@ module.exports = [
     },
   },
 
-  js.configs.recommended,
+  {
+    files: ["**/*.test.js", "**/*.spec.js", "**/__tests__/**/*.js"],
+    languageOptions: {
+      globals: {
+        test: "readonly",
+        expect: "readonly",
+        describe: "readonly",
+        it: "readonly",
+        beforeAll: "readonly",
+        afterAll: "readonly",
+        beforeEach: "readonly",
+        afterEach: "readonly",
+        jest: "readonly",
+      },
+    },
+  },
 
   {
     files: ["**/*.jsx", "**/*.tsx"],
@@ -52,4 +70,6 @@ module.exports = [
       ],
     },
   },
+
+  js.configs.recommended,
 ];
