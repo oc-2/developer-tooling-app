@@ -19,15 +19,20 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
           node-version: lts/*
-
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+          
       - name: Output a Coverage report file
-        run: npm install && npm run test:coverage
+        run: pnpm install && pnpm run test:coverage
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
