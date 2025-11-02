@@ -2,6 +2,8 @@
 
 [![codecov](https://codecov.io/gh/oc-2/developer-tooling-app/graph/badge.svg?token=U49PGrRnaY)](https://codecov.io/gh/oc-2/developer-tooling-app)
 
+This is a Next.js project bootstrapped with create-next-app.
+
 ## Overview
 
 This is a repo configured with commit message enhancers.
@@ -54,11 +56,15 @@ This is a repo configured with commit message enhancers.
 
 ### Available Commands
 
-- `npm start` - Start the web server with nodemon (auto-reload on file changes)
+- `npm run dev` - Dev web server
+- `npm run build` - Builds project
+- `npm start` - Starts web server
+- `npm run dev:cheerio` - Runs test file
 - `npm run lint` - Run ESLint on all files
 - `npm run format` - Format all files with Prettier
 - `npm run commit` - Runs commitizen
 - `npm run test` - Uses jest to test
+- `npm run test:coverage` - Produces coverage report
 
 ### Pre-commit Checks
 

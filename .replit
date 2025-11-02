@@ -4,7 +4,7 @@ expertMode = true
 
 [nix]
 channel = "stable-25_05"
-packages = ["p7zip", "at", "wget"]
+packages = ["p7zip", "at", "wget", "lsof"]
 
 [workflows]
 runButton = "Project"
@@ -36,3 +36,9 @@ externalPort = 80
 
 [[ports]]
 localPort = 5000
+externalPort = 5000
+
+[[ports]]
+localPort = 5173
+externalPort = 5173
+exposeLocalhost = true

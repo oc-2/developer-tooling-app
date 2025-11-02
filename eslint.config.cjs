@@ -2,10 +2,11 @@
 const js = require("@eslint/js");
 const reactHooks = require("eslint-plugin-react-hooks");
 const reactRefresh = require("eslint-plugin-react-refresh");
+const tseslint = require("@typescript-eslint/eslint-plugin");
+const tsParser = require("@typescript-eslint/parser");
 
 module.exports = [
   {
-    // This first element handles global ignores
     ignores: [
       "node_modules/**",
       ".cache/**",
@@ -20,6 +21,9 @@ module.exports = [
       "dist/**",
       "build/**",
       "*.log",
+      ".next/**",
+      "out/**",
+      "next-env.d.ts",
     ],
   },
 
@@ -57,12 +61,23 @@ module.exports = [
   },
 
   {
-    files: ["**/*.jsx", "**/*.tsx"],
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        ecmaFeatures: { jsx: true },
+        project: "./tsconfig.json",
+      },
+    },
     plugins: {
+      "@typescript-eslint": tseslint,
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
     },
     rules: {
+      ...tseslint.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": [
         "warn",

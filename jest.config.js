@@ -26,8 +26,7 @@ const config = {
     "!**/node_modules/**",
     "!**/dist/**",
     "!**/coverage/**",
-    "!src/static/**",
-    "!**/__tests__/**",
+    "!**/tests/**",
     "!**/*.d.ts",
   ],
 
@@ -169,7 +168,7 @@ const config = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"],
+  testMatch: ["**/tests/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: [
