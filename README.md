@@ -29,6 +29,8 @@ This is a repo configured with commit message enhancers.
 5. **Lint-staged** - Runs linters only on staged files for performance
 
 6. **Jest** - Uses jest to test
+   
+7. **Next.js** - Project uses Next.js
 
 ### Available Commands
 
