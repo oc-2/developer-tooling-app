@@ -10,30 +10,6 @@ This is a repo configured with commit message enhancers.
 
 ## Project Architecture
 
-### Structure
-
-```
-.
-├── .husky/
-│   ├── commit-msg
-│   └── pre-commit
-├── src/
-│   ├── index.js
-|   └── tests/
-|       ├── cheerio.spec.js
-│   └── static/
-│       ├── index.html
-│       └── css/
-│           ├── styles.css
-│           ├── bootstrap.min.css
-│           └── font-awesome/**
-├── commitlint.config.ts
-├── eslint.config.mjs
-├── package.json
-├── package-lock.json
-└── README.md
-```
-
 ### Configured Tools
 
 1. **ESLint** - Code linting with plugins for:
