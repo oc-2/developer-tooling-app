@@ -29,11 +29,9 @@ This is a repo configured with commit message enhancers.
 5. **Lint-staged** - Runs linters only on staged files for performance
 
 6. **Jest** - Uses jest to test
-   
 7. **React.js** - App runs on react
    - This project was bootstrapped with Create React App.
    - To learn React, check out the [React documentation](https://reactjs.org/).
-
 
 ### Pre-commit Checks
 
