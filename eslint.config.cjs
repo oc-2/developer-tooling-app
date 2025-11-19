@@ -2,11 +2,12 @@
 const js = require("@eslint/js");
 const reactHooks = require("eslint-plugin-react-hooks");
 const reactRefresh = require("eslint-plugin-react-refresh");
-const tseslint = require("@typescript-eslint/eslint-plugin");
-const tsParser = require("@typescript-eslint/parser");
+const reactApp = require("eslint-config-react-app"); // CRA base config
+const reactAppJest = require("eslint-config-react-app/jest"); // CRA Jest config
 
 module.exports = [
   {
+    // Global ignores
     ignores: [
       "node_modules/**",
       ".cache/**",
@@ -21,9 +22,6 @@ module.exports = [
       "dist/**",
       "build/**",
       "*.log",
-      ".next/**",
-      "out/**",
-      "next-env.d.ts",
     ],
   },
 
@@ -58,32 +56,23 @@ module.exports = [
         jest: "readonly",
       },
     },
+    ...reactAppJest, // adds CRA Jest rules
   },
 
   {
-    files: ["**/*.ts", "**/*.tsx"],
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-        ecmaFeatures: { jsx: true },
-        project: "./tsconfig.json",
-      },
-    },
+    files: ["**/*.jsx", "**/*.tsx"],
     plugins: {
-      "@typescript-eslint": tseslint,
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
     },
     rules: {
-      ...tseslint.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
       ],
     },
+    ...reactApp, // adds CRA React rules
   },
 
   js.configs.recommended,
