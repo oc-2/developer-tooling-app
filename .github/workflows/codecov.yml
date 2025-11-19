@@ -27,7 +27,7 @@ jobs:
           node-version: lts/*
 
       - name: Output a Coverage report file
-        run: yarn install && yarn test --coverage
+        run: yarn install --immutable --immutable-cache --check-cache && yarn test --coverage
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
